@@ -1,3 +1,4 @@
+weg
 Run the follwing command to run the simple web server:
 $ go run http.go  
 
@@ -22,4 +23,7 @@ Test that you can run it:
 
 Here's how to run the test suite:
 
+
     docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.6 go test -v
+
+Hello World
