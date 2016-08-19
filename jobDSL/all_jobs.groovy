@@ -33,7 +33,8 @@ job(buildJobName) {
             sudo docker run --rm rufus/siege-engine -g http://$cip:8000/
             [ $? -ne 0 ] && exit 1
             sudo docker kill ${cid}
-            sudo docker rm ${cid}'''.stripIndent())
+            sudo docker rm ${cid}'''.stripIndent()),
+         shell('sudo docker run --rm -v /opt/containers/jenkins_home/workspace/1.build-webserver_GEN/:/usr/src/myapp -w /usr/src/myapp golang:1.6 go test -v')   
     }
     publishers {
         downstreamParameterized {
